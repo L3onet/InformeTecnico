@@ -1,0 +1,320 @@
+\documentclass[letterpaper,oneside,openany,11pt]{book}
+\usepackage[spanish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage[authoryear, round]{natbib}
+\usepackage{graphicx} % graficos
+\usepackage{subfigure} % subfiguras
+\usepackage[subfigure]{tocloft}
+\usepackage{wrapfig}
+\usepackage{enumerate} % enumerados
+\usepackage{multirow} % para las tablas
+\usepackage{longtable} % para tablas largas
+\usepackage{lscape}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{longtable} % para tablas largas
+\usepackage{amssymb, amsmath, amsbsy} % simbolitos
+\usepackage{upgreek} % para poner letras griegas sin cursiva
+\usepackage{cancel} % para tachar
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{stackrel} % para el comando \stackbin
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{enumerate} 
+\usepackage{caption}
+\usepackage{lscape}
+\DeclareCaptionLabelSeparator{point}{. }
+\floatstyle{plaintop}
+\restylefloat{table}
+
+% para contraer referencias
+
+\setlength{\textwidth}{155mm}
+\setlength{\textheight}{215mm}
+\setlength{\oddsidemargin}{6mm}
+\setlength{\evensidemargin}{28mm}
+\setlength{\topmargin}{-5mm}
+
+{\setlength\tabcolsep{3.5pt} % default value: 6pt
+
+\titleformat{\chapter}[hang]
+{\vspace{-2.3cm}
+	\normalfont\bfseries\huge}{\ \thechapter .}{0.0ex}
+{
+}
+[
+]
+
+\captionsetup{
+	position=above,
+	justification=centering,
+	labelsep=point, % <<< label and text on different lines
+	singlelinecheck=false % <<< raggadright also when the caption is shorter
+	% than a single line
+}
+
+
+\begin{document}
+	
+	\addtocontents{toc}{\hfill \textbf{Página} \par}
+	\addtocontents{toc}{\vspace{-2mm} \hspace{-7.5mm} \hrule \par}
+	
+	% renombrar el Indice de cuadros por indice de tablas
+	\renewcommand{\listtablename}{Índice de tablas}
+	%renombrar cuadro por tabla
+	\renewcommand{\tablename}{Tabla}
+	\renewcommand{\cftfigfont}{Figura }
+	\renewcommand{\cfttabfont}{Tabla }
+	\renewcommand{\bibname}{Referencias}
+	
+\begin{titlepage}
+
+% Empieza la portada 	
+	\begin{center}
+		\vspace*{-1in}
+		\begin{figure}[htb]
+			\begin{minipage}[b]{0.3\textwidth}
+				\begin{center}
+					
+				\end{center}
+				\end{minipage} \hfill \begin{minipage}[b]{0.6\textwidth}
+				\scriptsize\textit{\begin{flushright}
+						Tecnológico Nacional de México\\
+						Instituto Tecnológico de Cd. Altamirano
+					\end{flushright}}
+		\end{minipage}
+	\end{figure}
+		
+
+		\rule{160mm}{0.5mm}\\
+		\vspace*{0.40in}
+		\huge
+		\textbf{Instituto Tecnológico de Cd. Altamirano}\\
+		\vspace*{0.7in}
+		
+		\begin{large}
+			\textbf{Informe técnico}\\
+		\end{large}
+		\vspace*{0.3in}
+		\begin{Large}
+			\textbf{TITULO DEL PROYECTO'} \\
+		\end{Large}
+		\vspace*{0.4in}
+		\begin{large}
+			Presentan: \\
+			\vspace*{0.25in}
+			\textbf{NOMBRE} \\
+			\textbf{NOMBRE} \\
+		\end{large}
+		\vspace*{0.4in}
+		
+		\begin{large}
+			como requisito para la acreditación de la materia: \\
+			\vspace*{0.1in}
+			\textbf{Taller de Investigación II} \\
+		\end{large}
+		\vspace*{0.4in}
+		
+		\begin{large}
+			Director de proyecto \\
+			\vspace*{0.1in}
+			\textbf{M.C. Leonel González Vidales} \\
+		\end{large}
+		\vspace*{0.4in}
+	
+		
+		\vspace*{0.25in}
+		\small
+		Cd. Altamirano, Guerrero, México. \hfill Junio de 2020\\
+		
+	\end{center}
+	
+\end{titlepage}
+
+% Pagina en blanco
+\newpage
+$\ $
+\thispagestyle{empty} % para que no se numere esta pagina
+
+% capitulo de dedicatorias
+\chapter*{}
+% \pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
+
+\begin{flushright}
+ 	\textit{Dedicado a \\
+		mi familia}
+ \end{flushright}
+\thispagestyle{empty} % para que no se numere esta pagina
+ 
+% Pagina en blanco
+\newpage
+$\ $
+\thispagestyle{empty} % para que no se numere esta pagina
+
+% Capitulo de agradecimientos 
+\chapter*{Agradecimientos} % si no queremos que añada la palabra "Capitulo" 
+\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper, sapien sed mattis commodo, lectus magna aliquet augue, consequat commodo nibh quam quis ante. Fusce et elit ac dui ultrices ultricies. Curabitur ultrices aliquam tempus. In iaculis turpis malesuada pellentesque lacinia. Proin ultrices lectus at augue ultrices scelerisque. Quisque ut sem est. Proin laoreet, purus eu vulputate fringilla, elit arcu condimentum dui, ut dapibus nunc est sit amet odio. Quisque ac est odio. Suspendisse non sagittis purus. Vestibulum a ullamcorper urna, aliquam pulvinar quam. Nullam dictum dolor dictum, pellentesque magna vel, ornare enim. Sed egestas, nisi non suscipit bibendum, enim erat ullamcorper felis, non pellentesque enim sem at ante. \\
+
+Pellentesque imperdiet a tortor quis pharetra. Vivamus sit amet finibus ipsum. Ut commodo mauris non lacus semper consequat. Duis placerat a neque vel ultricies. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lacus sem, vulputate vel sagittis et, auctor ac justo. Proin feugiat magna vitae sagittis interdum. Quisque suscipit euismod urna vitae vestibulum. Donec tincidunt ornare justo, ac sollicitudin metus elementum sit amet. Ut vitae laoreet magna. Etiam ut ex semper, eleifend lorem ut, sodales mi. Praesent non lobortis justo. Fusce ornare scelerisque ex a tempor. Phasellus maximus mauris eu magna rhoncus imperdiet. Duis dignissim auctor ipsum ut rhoncus.
+\thispagestyle{empty} % para que no se numere esta pagina
+
+% Pagina en blanco
+\newpage
+$\ $
+\thispagestyle{empty} % para que no se numere esta pagina
+
+\chapter*{Resumen} % si no queremos que añada la palabra "Capitulo"
+\pagenumbering{arabic} % para empezar la numeración con números
+\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
+\markboth{Resumen}{Resumen} % encabezado
+\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper, sapien sed mattis commodo, lectus magna aliquet augue, consequat commodo nibh quam quis ante. Fusce et elit ac dui ultrices ultricies. Curabitur ultrices aliquam tempus. In iaculis turpis malesuada pellentesque lacinia. Proin ultrices lectus at augue ultrices scelerisque. Quisque ut sem est. Proin laoreet, purus eu vulputate fringilla, elit arcu condimentum dui, ut dapibus nunc est sit amet odio. Quisque ac est odio. Suspendisse non sagittis purus. Vestibulum a ullamcorper urna, aliquam pulvinar quam. Nullam dictum dolor dictum, pellentesque magna vel, ornare enim. Sed egestas, nisi non suscipit bibendum, enim erat ullamcorper felis, non pellentesque enim sem at ante. \\
+
+Pellentesque imperdiet a tortor quis pharetra. Vivamus sit amet finibus ipsum. Ut commodo mauris non lacus semper consequat. Duis placerat a neque vel ultricies. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lacus sem, vulputate vel sagittis et, auctor ac justo. Proin feugiat magna vitae sagittis interdum. Quisque suscipit euismod urna vitae vestibulum. Donec tincidunt ornare justo, ac sollicitudin metus elementum sit amet. Ut vitae laoreet magna. Etiam ut ex semper, eleifend lorem ut, sodales mi. Praesent non lobortis justo. Fusce ornare scelerisque ex a tempor. Phasellus maximus mauris eu magna rhoncus imperdiet. Duis dignissim auctor ipsum ut rhoncus.
+
+\newpage
+\tableofcontents % indice de contenidos
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
+\listoffigures % indice de figuras
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
+\listoftables % indice de tablas	
+
+% Resumen de la propuesta de Tesis
+
+% La introducción proporciona una descripción precisa, breve y suficiente de cada una de las partes del proyecto. Se explica de una manera sencilla y clara la justificación, métodos, procedimientos utilizados, resultados obtenidos y conclusiones. También se exponen los motivos por los cuales el residente desarrollo dicho proyecto y la forma en que abordo el tema o el problema. Pueden incluirse reconocimientos o agradecimientos a aquellas personas e instituciones que ayudaron de alguna forma a la realización del proyecto ya sea con dinero, uso de instalaciones, acceso a documentos, orientaciones, préstamo o donación de bibliografía, materiales o equipo, etc. 
+
+\chapter{Introducción}\label{cap.introduccion}
+\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper, sapien sed mattis commodo, lectus magna aliquet augue, consequat commodo nibh quam quis ante. Fusce et elit ac dui ultrices ultricies. Curabitur ultrices aliquam tempus. In iaculis turpis malesuada pellentesque lacinia. Proin ultrices lectus at augue ultrices scelerisque. Quisque ut sem est. Proin laoreet, purus eu vulputate fringilla, elit arcu condimentum dui, ut dapibus nunc est sit amet odio. Quisque ac est odio. Suspendisse non sagittis purus. Vestibulum a ullamcorper urna, aliquam pulvinar quam. Nullam dictum dolor dictum, pellentesque magna vel, ornare enim. Sed egestas, nisi non suscipit bibendum, enim erat ullamcorper felis, non pellentesque enim sem at ante. \\
+
+Pellentesque imperdiet a tortor quis pharetra. Vivamus sit amet finibus ipsum. Ut commodo mauris non lacus semper consequat. Duis placerat a neque vel ultricies. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lacus sem, vulputate vel sagittis et, auctor ac justo. Proin feugiat magna vitae sagittis interdum. Quisque suscipit euismod urna vitae vestibulum. Donec tincidunt ornare justo, ac sollicitudin metus elementum sit amet. Ut vitae laoreet magna. Etiam ut ex semper, eleifend lorem ut, sodales mi. Praesent non lobortis justo. Fusce ornare scelerisque ex a tempor. Phasellus maximus mauris eu magna rhoncus imperdiet. Duis dignissim auctor ipsum ut rhoncus.
+
+
+% La justificación es la fundamentación del proyecto, donde se plantea la razón por la cuál el trabajo realizado es importante y trascendente. Donde los resultados obtenidos dan solución a las exigencias o expectativas académicas, sociales, empresariales, tecnológicas, científicas. Puede incluirse en detalle los antecedentes, causas e importancia de la situación que han motivado la realización del proyecto; asimismo, es conveniente comentar tanto los beneficios y ventajas que se derivan del proyecto, como sus desventajas y limitaciones. 
+
+\chapter{Justificación}\label{cap.justificacion}
+\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper, sapien sed mattis commodo, lectus magna aliquet augue, consequat commodo nibh quam quis ante. Fusce et elit ac dui ultrices ultricies. Curabitur ultrices aliquam tempus. In iaculis turpis malesuada pellentesque lacinia. Proin ultrices lectus at augue ultrices scelerisque. Quisque ut sem est. Proin laoreet, purus eu vulputate fringilla, elit arcu condimentum dui, ut dapibus nunc est sit amet odio. Quisque ac est odio. Suspendisse non sagittis purus. Vestibulum a ullamcorper urna, aliquam pulvinar quam. Nullam dictum dolor dictum, pellentesque magna vel, ornare enim. Sed egestas, nisi non suscipit bibendum, enim erat ullamcorper felis, non pellentesque enim sem at ante. \\
+
+Pellentesque imperdiet a tortor quis pharetra. Vivamus sit amet finibus ipsum. Ut commodo mauris non lacus semper consequat. Duis placerat a neque vel ultricies. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lacus sem, vulputate vel sagittis et, auctor ac justo. Proin feugiat magna vitae sagittis interdum. Quisque suscipit euismod urna vitae vestibulum. Donec tincidunt ornare justo, ac sollicitudin metus elementum sit amet. Ut vitae laoreet magna. Etiam ut ex semper, eleifend lorem ut, sodales mi. Praesent non lobortis justo. Fusce ornare scelerisque ex a tempor. Phasellus maximus mauris eu magna rhoncus imperdiet. Duis dignissim auctor ipsum ut rhoncus.
+
+
+% Los objetivos constituyen el ..para qué.. del trabajo y se refieren a lo que se desea lograr con el proyecto de residencia, determinando metas concretas, debidamente cuantificables, éstos deben ser escritos de una manera precisa y clara. Cuando el objetivo del proyecto es muy general conviene dividirlo en objetivos específicos. 
+
+% Según Rojas Soriano menciona que los objetivos son señalamientos provisionales que se contemplan y profundizan a medida que avanza el trabajo. 
+
+\chapter{Objetivos}\label{cap.objetivos}
+
+\section{Objetivo general}
+\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper, sapien sed mattis commodo, lectus magna aliquet augue, consequat commodo nibh quam quis ante. Fusce et elit ac dui ultrices ultricies. Curabitur ultrices aliquam tempus. In iaculis turpis malesuada pellentesque lacinia. Proin ultrices lectus at augue ultrices scelerisque. Quisque ut sem est. Proin laoreet, purus eu vulputate fringilla, elit arcu condimentum dui, ut dapibus nunc est sit amet odio. Quisque ac est odio. Suspendisse non sagittis purus. Vestibulum a ullamcorper urna, aliquam pulvinar quam. Nullam dictum dolor dictum, pellentesque magna vel, ornare enim. Sed egestas, nisi non suscipit bibendum, enim erat ullamcorper felis, non pellentesque enim sem at ante. \\
+
+\section{Objetivos espec\'{\i}ficos}
+\begin{itemize}
+	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper, sapien sed mattis commodo, lectus magna aliquet augue, consequat commodo nibh quam quis ante. Fusce et elit ac dui ultrices ultricies. Curabitur ultrices aliquam tempus. In iaculis turpis malesuada pellentesque lacinia. Proin ultrices lectus at augue ultrices scelerisque. Quisque ut sem est. Proin laoreet, purus eu vulputate fringilla, elit arcu condimentum dui, ut dapibus nunc est sit amet odio. Quisque ac est odio. Suspendisse non sagittis purus. Vestibulum a ullamcorper urna, aliquam pulvinar quam. Nullam dictum dolor dictum, pellentesque magna vel, ornare enim. Sed egestas, nisi non suscipit bibendum, enim erat ullamcorper felis, non pellentesque enim sem at ante.
+	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper, sapien sed mattis commodo, lectus magna aliquet augue, consequat commodo nibh quam quis ante. Fusce et elit ac dui ultrices ultricies. Curabitur ultrices aliquam tempus. In iaculis turpis malesuada pellentesque lacinia. Proin ultrices lectus at augue ultrices scelerisque. Quisque ut sem est. Proin laoreet, purus eu vulputate fringilla, elit arcu condimentum dui, ut dapibus nunc est sit amet odio. Quisque ac est odio. Suspendisse non sagittis purus. Vestibulum a ullamcorper urna, aliquam pulvinar quam. Nullam dictum dolor dictum, pellentesque magna vel, ornare enim. Sed egestas, nisi non suscipit bibendum, enim erat ullamcorper felis, non pellentesque enim sem at ante.
+\end{itemize}
+
+
+% Primeramente, se hace necesario entender lo que es un problema. Por lo tanto, la identificación de una necesidad o problema (dificultad a resolver) corresponde al análisis y evaluación de discrepancias mensurables entre una situación actual (lo que es) y otra deseada o necesaria (lo que debe ser, o debería ser) de un departamento, proceso o manejo de un sistema de información, etc. en una empresa u organismo. Donde este problema identificado se le dará solución al realizar el proyecto de residencia. Es posible que al realizar el análisis entre la situación actual y deseada surjan varios problemas a resolver; si esto sucede hay que priorizarlos. 
+
+% La forma de plantear el problema es describir las discrepancias mensurables entre la situación actual y deseada sin poner las soluciones ni métodos o procedimientos para hacer algo. 
+
+% Ejemplo: En los últimos tres años el porcentaje de alumnos reprobados en la materia xxxx siempre ha sido entre un 50 y 60 por ciento, ocupando el más alto índice de reprobados de todas las materias de la especialidad. La Comité Académico solicita a la Academia de la especialidad plantear alternativas de solución para que el porcentaje de reprobados no sobrepase del 5 por ciento para el próximo semestre. 
+
+% NOTA: Hay que tener cuidado, por que no es raro que algunas personas protesten diciendo -ya sabemos cuáles son nuestros problemas, lo que necesitamos son soluciones-. Pero muchas veces sólo conocemos algunos síntomas de ciertos problemas; sin embargo, a menudo no tenemos conocimiento de la naturaleza exacta de cada problema o necesidad, dando como resultado a no resolver nunca el problema verdadero. Un caso análogo sería un médico que recetara una aspirina a un paciente con dolor de cabeza, para descubrir más tarde que el enfermo tenía un tumor cerebral. 
+
+
+\chapter{Problemas a resolver}\label{cap.problemasresolver}
+\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper, sapien sed mattis commodo, lectus magna aliquet augue, consequat commodo nibh quam quis ante. Fusce et elit ac dui ultrices ultricies. Curabitur ultrices aliquam tempus. In iaculis turpis malesuada pellentesque lacinia. Proin ultrices lectus at augue ultrices scelerisque. Quisque ut sem est. Proin laoreet, purus eu vulputate fringilla, elit arcu condimentum dui, ut dapibus nunc est sit amet odio. Quisque ac est odio. Suspendisse non sagittis purus. Vestibulum a ullamcorper urna, aliquam pulvinar quam. Nullam dictum dolor dictum, pellentesque magna vel, ornare enim. Sed egestas, nisi non suscipit bibendum, enim erat ullamcorper felis, non pellentesque enim sem at ante. \\
+
+
+% Es la exposición organizada de los elementos teóricos generales y particulares (metodologías, procesos, otros trabajos. o Tesis planteadas por investigadores reconocidos.
+
+% Ejemplo: algunos principios de la Ingeniería de Software o de la Administración), así como la explicitación de los conceptos básicos en que se apoya tu proyecto de residencia. Se puede decir que ese fundamento teórico y conceptual representa la posición teórica del residente como base en la cual plantea el problema y centra la búsqueda de soluciones a las necesidades (problemas) planteadas. 
+
+% Para redactar el fundamento teórico es suficiente que el residente: 
+
+% Escriba el nombre de la teoría sustentada o en su defecto el nombre del autor o autores más importantes en los cuales se basó para abordar el problema que dio lugar al desarrollo de su trabajo. 
+% Explique o describa la teoría en cuestión o las tesis sostenidas por el autor. 
+% Defina o explique los conceptos o principios que son propios de la teoría en cuestión o de las tesis planteadas por investigadores. 
+% Indique la o las fuentes en las que se documentó para elaborar este fundamento teórico que guió el abordaje del proyecto. 
+
+\chapter{Fundamento  teórico}\label{cap.marco}
+\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper, sapien sed mattis commodo, lectus magna aliquet augue, consequat commodo nibh quam quis ante. Fusce et elit ac dui ultrices ultricies. Curabitur ultrices aliquam tempus. In iaculis turpis malesuada pellentesque lacinia. Proin ultrices lectus at augue ultrices scelerisque. Quisque ut sem est. Proin laoreet, purus eu vulputate fringilla, elit arcu condimentum dui, ut dapibus nunc est sit amet odio. Quisque ac est odio. Suspendisse non sagittis purus. Vestibulum a ullamcorper urna, aliquam pulvinar quam. Nullam dictum dolor dictum, pellentesque magna vel, ornare enim. Sed egestas, nisi non suscipit bibendum, enim erat ullamcorper felis, non pellentesque enim sem at ante. \\
+
+Pellentesque imperdiet a tortor quis pharetra. Vivamus sit amet finibus ipsum. Ut commodo mauris non lacus semper consequat. Duis placerat a neque vel ultricies. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lacus sem, vulputate vel sagittis et, auctor ac justo. Proin feugiat magna vitae sagittis interdum. Quisque suscipit euismod urna vitae vestibulum. Donec tincidunt ornare justo, ac sollicitudin metus elementum sit amet. Ut vitae laoreet magna. Etiam ut ex semper, eleifend lorem ut, sodales mi. Praesent non lobortis justo. Fusce ornare scelerisque ex a tempor. Phasellus maximus mauris eu magna rhoncus imperdiet. Duis dignissim auctor ipsum ut rhoncus. \\
+
+
+
+% Esta sección debe contener las metodologías utilizadas y en general todos los procedimientos teóricos y prácticos que se hayan empleado. De hecho debe contemplar el qué se hizo, cómo se realizó, con qué equipo o material, cuándo, quiénes participaron y para qué se usaron tales procedimientos o métodos. 
+
+% Si en el desarrollo del proyecto se utilizó equipo de cómputo, software o cualquier otro material, hay que incluir especificaciones técnicas, las cantidades, la procedencia. Si se realizaron procesos describir los métodos de preparación adjuntando tablas, gráficas, diagramas y figuras utilizadas. 
+
+% Las actividades realizadas en una metodología deben presentarse en forma secuencial con un orden cronológico. 
+
+% Si se realizan entrevista o encuestas es importante describir las características de la población estudiada, los controles utilizados en la selección de la muestra, tales como edad, sexo, escolaridad, nivel socioeconómico, tamaño de la muestra, etc. 
+
+\chapter{Procedimiento y descripción de las actividades realizadas}\label{cap.procedimiento}
+\section{Lorem ipsum}
+\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper, sapien sed mattis commodo, lectus magna aliquet augue, consequat commodo nibh quam quis ante. Fusce et elit ac dui ultrices ultricies. Curabitur ultrices aliquam tempus. In iaculis turpis malesuada pellentesque lacinia. Proin ultrices lectus at augue ultrices scelerisque. Quisque ut sem est. Proin laoreet, purus eu vulputate fringilla, elit arcu condimentum dui, ut dapibus nunc est sit amet odio. Quisque ac est odio. Suspendisse non sagittis purus. Vestibulum a ullamcorper urna, aliquam pulvinar quam. Nullam dictum dolor dictum, pellentesque magna vel, ornare enim. Sed egestas, nisi non suscipit bibendum, enim erat ullamcorper felis, non pellentesque enim sem at ante. \\
+
+Pellentesque imperdiet a tortor quis pharetra. Vivamus sit amet finibus ipsum. Ut commodo mauris non lacus semper consequat. Duis placerat a neque vel ultricies. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lacus sem, vulputate vel sagittis et, auctor ac justo. Proin feugiat magna vitae sagittis interdum. Quisque suscipit euismod urna vitae vestibulum. Donec tincidunt ornare justo, ac sollicitudin metus elementum sit amet. Ut vitae laoreet magna. Etiam ut ex semper, eleifend lorem ut, sodales mi. Praesent non lobortis justo. Fusce ornare scelerisque ex a tempor. Phasellus maximus mauris eu magna rhoncus imperdiet. Duis dignissim auctor ipsum ut rhoncus. \\
+
+
+% En esta parte del documento se presentan los datos, programas (listados fuentes realizados), tablas, diagramas de bloques obtenidos, gráficas. También se expone la manera en que se encontraron, se procesaron y analizaron (cuantitativamente o cualitativamente) los resultados. 
+
+% Para la elaboración de tablas, gráficas, figuras, diagramas, algunas autores recomiendan las siguientes reglas:
+
+% Numerarlas por separado (tabla 1, gráfica 1, diagrama 1, tabla 2) pero consecutivamente de acuerdo a su orden de aparición en el texto. 
+% Su título debe ser claro y preciso y ha de referirse a la información que en ellas se presenta. 
+% En las gráficas cada columna y renglón debe llevar su propio título. 
+% Cuando sea necesario hacer una aclaración acerca de una tabla o de una gráfica, incluirla como pie de tabla o de gráfica.
+% Si el conjunto de tablas, gráficas, figuras, diagramas son numerosas se recomienda elaborar un índice, llamándolo  ILUSTRACIONES y colocarlo en la página siguiente del índice general. 
+
+\chapter{Resultados, planos, gráficas, prototipos y programas}\label{cap.resultados}
+\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper, sapien sed mattis commodo, lectus magna aliquet augue, consequat commodo nibh quam quis ante. Fusce et elit ac dui ultrices ultricies. Curabitur ultrices aliquam tempus. In iaculis turpis malesuada pellentesque lacinia. Proin ultrices lectus at augue ultrices scelerisque. Quisque ut sem est. Proin laoreet, purus eu vulputate fringilla, elit arcu condimentum dui, ut dapibus nunc est sit amet odio. Quisque ac est odio. Suspendisse non sagittis purus. Vestibulum a ullamcorper urna, aliquam pulvinar quam. Nullam dictum dolor dictum, pellentesque magna vel, ornare enim. Sed egestas, nisi non suscipit bibendum, enim erat ullamcorper felis, non pellentesque enim sem at ante. \\
+
+Pellentesque imperdiet a tortor quis pharetra. Vivamus sit amet finibus ipsum. Ut commodo mauris non lacus semper consequat. Duis placerat a neque vel ultricies. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lacus sem, vulputate vel sagittis et, auctor ac justo. Proin feugiat magna vitae sagittis interdum. Quisque suscipit euismod urna vitae vestibulum. Donec tincidunt ornare justo, ac sollicitudin metus elementum sit amet. Ut vitae laoreet magna. Etiam ut ex semper, eleifend lorem ut, sodales mi. Praesent non lobortis justo. Fusce ornare scelerisque ex a tempor. Phasellus maximus mauris eu magna rhoncus imperdiet. Duis dignissim auctor ipsum ut rhoncus. \\
+
+
+% CONCLUSIONES 
+
+% Las conclusiones deben ser redactadas con claridad y precisión ya que en ellas se presenta, el análisis de los resultados para comprobar los objetivos planteados, la justificación del proyecto, los alcances o limitaciones, la relación entre los resultados obtenidos, aportaciones logradas, deducciones obtenidas de la comparación y/o relación entre la teoría y la práctica. 
+
+% Por lo tanto una conclusión consta de proposiciones inferidas de los resultados del trabajo, haciéndolas en forma deductiva, inductiva o análoga. Es importante mencionar que una conclusión es valida cuando proviene de un análisis objetivo de los resultados obtenidos haciendo resaltar las relaciones significativas. 
+
+% Desde otro punto de vista se puede decir que las conclusiones son la síntesis de los logros obtenidos, de cada parte realizada en el proyecto de residencia profesional. 
+
+% Para ayudar analizar o interpretar resultados obtenidos y en consecuencia formular conclusiones, se hace necesario seguir algunos puntos: 
+
+% a) Exponer relaciones y generalizaciones que indiquen los resultados. 
+% b) Señalar las excepciones, los aspectos no resueltos, las limitaciones. Evitar ocultar o alternar aquellos datos que no encajan bien. 
+% c) Mostrar la concordancia o no concordancia con la justificación, los objetivos del proyecto o las metas planteadas, con otros proyectos, artículos, teorías, etc. 
+% d) Describir las consecuencias teóricas del proyecto y sus posible aplicaciones prácticas. 
+
+
+% RECOMENDACIONES 
+
+% Esta sección corresponde a la descripción de las acciones ya sean inmediatas o mediatas que el residente debe proponer para el mejoramiento de un proceso, producto equipo, sistema de información, etc., en la empresa u organismo donde realizó la residencia profesional. 
+
+% En otros términos, el residente expone con toda claridad las implicaciones prácticas de sus hallazgos, con el fin de plantear observaciones, actividades futuras, sugerencias, nuevos proyectos, etc., que redunden en el mejoramiento de la situación actual. 
+
+% En todo planteamiento de una recomendación debe establecerse su justificación. Esto es, considerar el por qué y el para qué esas sugerencias, propuestas, actividades, planes de acción futuros o inmediatos. 
+
+\chapter{Conclusiones y recomendaciones}\label{cap.conclusiones}
+\section{Conclusiones}
+\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper, sapien sed mattis commodo, lectus magna aliquet augue, consequat commodo nibh quam quis ante. Fusce et elit ac dui ultrices ultricies. Curabitur ultrices aliquam tempus. In iaculis turpis malesuada pellentesque lacinia. Proin ultrices lectus at augue ultrices scelerisque. Quisque ut sem est. Proin laoreet, purus eu vulputate fringilla, elit arcu condimentum dui, ut dapibus nunc est sit amet odio. Quisque ac est odio. Suspendisse non sagittis purus. Vestibulum a ullamcorper urna, aliquam pulvinar quam. Nullam dictum dolor dictum, pellentesque magna vel, ornare enim. Sed egestas, nisi non suscipit bibendum, enim erat ullamcorper felis, non pellentesque enim sem at ante. \\
+
+\section{Recomendaciones}
+\noindent Pellentesque imperdiet a tortor quis pharetra. Vivamus sit amet finibus ipsum. Ut commodo mauris non lacus semper consequat. Duis placerat a neque vel ultricies. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lacus sem, vulputate vel sagittis et, auctor ac justo. Proin feugiat magna vitae sagittis interdum. Quisque suscipit euismod urna vitae vestibulum. Donec tincidunt ornare justo, ac sollicitudin metus elementum sit amet. Ut vitae laoreet magna. Etiam ut ex semper, eleifend lorem ut, sodales mi. Praesent non lobortis justo. Fusce ornare scelerisque ex a tempor. Phasellus maximus mauris eu magna rhoncus imperdiet. Duis dignissim auctor ipsum ut rhoncus. \\
+
+
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Referencias}
+\bibliographystyle{apalike3} % estilo de la bibliografía.
+\bibliography{biblio}
+\end{document}}
